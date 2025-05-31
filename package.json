@@ -1,0 +1,32 @@
+{
+  "name": "404-as-a-service",
+  "version": "1.0.0",
+  "description": "A public API that returns random 404 error messages",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Himanshu8862/404-as-a-service.git"
+  },
+  "keywords": [
+    "404",
+    "api",
+    "funny",
+    "http",
+    "humor"
+  ],
+  "author": "Himanshu8862",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Himanshu8862/404-as-a-service/issues"
+  },
+  "homepage": "https://github.com/Himanshu8862/404-as-a-service#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0"
+  }
+}
