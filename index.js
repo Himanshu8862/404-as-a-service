@@ -3,6 +3,8 @@ const rateLimit = require("express-rate-limit");
 const cors = require("cors");
 const helmet = require("helmet");
 const messages = require("./messages");
+const crypto = require("crypto");
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -21,10 +23,14 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
+function getRandomIndex(max) {
+  return crypto.randomInt(0, max);
+}
+
 // Root endpoint
 app.get("/", (req, res) => {
-  const message = messages[Math.floor(Math.random() * messages.length)];
-  res.status(404).json({ error: message });
+  const index = getRandomIndex(messages.length);
+  res.status(404).json({ error: messages[index] });
 });
 
 // 404 fallback (non-GET or invalid paths)
